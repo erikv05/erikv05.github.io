@@ -1,11 +1,26 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
   const handleSendClick = () => {
-    alert("Message sent!");
+    const templateParams = { email, message };
+
+    emailjs
+      .send("service_l2attc9", "template_54p45zv", templateParams, {
+        publicKey: "sCR0CUyp55HErWtL1",
+        blockHeadless: true,
+      })
+      .then(
+        (response) => {
+          alert("SUCCESS!");
+        },
+        (error) => {
+          alert("Could not send email. Please try again later." + error);
+        }
+      );
   };
 
   return (
