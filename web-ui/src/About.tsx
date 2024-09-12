@@ -28,7 +28,7 @@ const About: React.FC = () => {
       {/* Get In Touch button */}
       <div className="mt-8">
         <a
-          href="/contact"
+          href="/#/contact"
           className="text-blue-500 border border-blue-500 px-6 py-3 rounded hover:bg-blue-500 hover:text-black transition duration-300"
         >
           Get In Touch
