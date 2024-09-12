@@ -60,8 +60,8 @@ const App: React.FC = () => {
       </main>
 
       {/* Social Icons Sidebar */}
-      <div className="fixed bottom-2 left-4 flex flex-col space-y-4 text-blue-500">
-        <a href="#" className="hover:text-white transition duration-300">
+      <div className="fixed bottom-4 left-4 flex flex-col space-y-4 text-blue-500">
+        <a href="https://linkedin.com/in/erik-vank">
           <div>
             <img
               src={require("./images/linkedinLogo.png")}
@@ -85,8 +85,27 @@ const App: React.FC = () => {
             />
           </div>
         </a>
-        <a href="#" className="hover:text-white transition duration-300">
-          GitHub
+        <a href="https://github.com/erikv05">
+          <img
+            src={require("./images/githubLogo.png")}
+            onMouseOver={() => {
+              const img = document.getElementById("githubLogo");
+              if (img) {
+                img.setAttribute(
+                  "src",
+                  require("./images/githubLogo-hover.png")
+                );
+              }
+            }}
+            onMouseOut={() => {
+              const img = document.getElementById("githubLogo");
+              if (img) {
+                img.setAttribute("src", require("./images/githubLogo.png"));
+              }
+            }}
+            className="object-scale-down h-8 w-8"
+            id="githubLogo"
+          />
         </a>
       </div>
 
