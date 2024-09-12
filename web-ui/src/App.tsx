@@ -12,13 +12,13 @@ const App: React.FC = () => {
             <div>
               <img
                 alt="LinkedIn Logo"
-                src={require("./images/linkedinLogo.png")}
+                src={require("./res/images/linkedinLogo.png")}
                 onMouseOver={() => {
                   const img = document.getElementById("linkedinLogo");
                   if (img) {
                     img.setAttribute(
                       "src",
-                      require("./images/linkedinLogo-hover.png")
+                      require("./res/images/linkedinLogo-hover.png")
                     );
                   }
                 }}
@@ -27,7 +27,7 @@ const App: React.FC = () => {
                   if (img) {
                     img.setAttribute(
                       "src",
-                      require("./images/linkedinLogo.png")
+                      require("./res/images/linkedinLogo.png")
                     );
                   }
                 }}
@@ -39,20 +39,23 @@ const App: React.FC = () => {
           <a href="https://github.com/erikv05">
             <img
               alt="GitHub Logo"
-              src={require("./images/githubLogo.png")}
+              src={require("./res/images/githubLogo.png")}
               onMouseOver={() => {
                 const img = document.getElementById("githubLogo");
                 if (img) {
                   img.setAttribute(
                     "src",
-                    require("./images/githubLogo-hover.png")
+                    require("./res/images/githubLogo-hover.png")
                   );
                 }
               }}
               onMouseOut={() => {
                 const img = document.getElementById("githubLogo");
                 if (img) {
-                  img.setAttribute("src", require("./images/githubLogo.png"));
+                  img.setAttribute(
+                    "src",
+                    require("./res/images/githubLogo.png")
+                  );
                 }
               }}
               className="object-scale-down h-8 w-8"
@@ -62,17 +65,20 @@ const App: React.FC = () => {
           <a href="mailto:erik_vank@brown.edu">
             <img
               alt="Mail Logo"
-              src={require("./images/mail.png")}
+              src={require("./res/images/mail.png")}
               onMouseOver={() => {
                 const img = document.getElementById("mail");
                 if (img) {
-                  img.setAttribute("src", require("./images/mail-hover.png"));
+                  img.setAttribute(
+                    "src",
+                    require("./res/images/mail-hover.png")
+                  );
                 }
               }}
               onMouseOut={() => {
                 const img = document.getElementById("mail");
                 if (img) {
-                  img.setAttribute("src", require("./images/mail.png"));
+                  img.setAttribute("src", require("./res/images/mail.png"));
                 }
               }}
               className="object-scale-down h-8 w-8"
@@ -82,7 +88,7 @@ const App: React.FC = () => {
         </div>
 
         <nav className="flex space-x-8 justify-center items-center">
-          <a href="#about" className="hover:animate-bounce-one">
+          <a href="./" className="hover:animate-bounce-one">
             <span className="text-blue-500">[0]</span> About
           </a>
           <a href="#projects" className="hover:animate-bounce-one">
@@ -92,8 +98,9 @@ const App: React.FC = () => {
             <span className="text-blue-500">[2]</span> Contact
           </a>
           <a
-            href="/resume"
+            href={require("./res/ErikVank_Resume.pdf")}
             className="border border-blue-500 px-4 py-2 rounded hover:bg-blue-500 hover:text-black transition duration-300"
+            download="ErikVank_Resume.pdf"
           >
             Resume
           </a>
