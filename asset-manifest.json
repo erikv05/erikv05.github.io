@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.75524f55.css",
-    "main.js": "/static/js/main.9c7f2c68.js",
+    "main.css": "/static/css/main.dca8973b.css",
+    "main.js": "/static/js/main.86c87165.js",
     "static/media/ErikVank_Resume.pdf": "/static/media/ErikVank_Resume.43c869cb816ade98a4e0.pdf",
     "static/media/linkedinLogo.png": "/static/media/linkedinLogo.9f414330ebd89037b6a3.png",
     "static/media/linkedinLogo-hover.png": "/static/media/linkedinLogo-hover.a0ee7f6c4e32d32085a2.png",
     "static/media/mail-hover.png": "/static/media/mail-hover.99f6346249f7b01d8454.png",
     "index.html": "/index.html",
-    "main.75524f55.css.map": "/static/css/main.75524f55.css.map",
-    "main.9c7f2c68.js.map": "/static/js/main.9c7f2c68.js.map"
+    "main.dca8973b.css.map": "/static/css/main.dca8973b.css.map",
+    "main.86c87165.js.map": "/static/js/main.86c87165.js.map"
   },
   "entrypoints": [
-    "static/css/main.75524f55.css",
-    "static/js/main.9c7f2c68.js"
+    "static/css/main.dca8973b.css",
+    "static/js/main.86c87165.js"
   ]
 }
