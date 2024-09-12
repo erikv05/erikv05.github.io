@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
               GitHub
             </a>
             : React + Tailwind CSS with custom animations, deployed to GitHub
-            pages
+            pages.
           </p>
         </div>
         {/* Codetations */}
