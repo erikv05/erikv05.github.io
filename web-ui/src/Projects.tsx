@@ -112,9 +112,10 @@ const Projects: React.FC = () => {
         <TypeAnimation
           className="font-bold text-4xl lg:text-4xl pb-8"
           sequence={["My Projects", 1000]}
-          speed={10}
+          speed={50}
           repeat={0}
           wrapper={"div"}
+          cursor={false}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Project 1 */}
