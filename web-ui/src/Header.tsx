@@ -80,10 +80,10 @@ function Header() {
         <a href="./" className="hover:animate-bounce-one">
           <span className="text-blue-500">[0]</span> About
         </a>
-        <a href="/projects" className="hover:animate-bounce-one">
+        <a href="/#/projects" className="hover:animate-bounce-one">
           <span className="text-blue-500">[1]</span> Projects
         </a>
-        <a href="/contact" className="hover:animate-bounce-one">
+        <a href="/#/contact" className="hover:animate-bounce-one">
           <span className="text-blue-500">[2]</span> Contact
         </a>
         <a
