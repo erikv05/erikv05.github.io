@@ -6,52 +6,49 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col font-mono">
-      {/* Main content - contact */}
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <form className="w-full max-w-lg bg-gray-800 p-8 rounded-lg">
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                htmlFor="grid-email"
-              >
-                Email
-              </label>
-              <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-email"
-                type="email"
-                placeholder="john.doe@example.com"
-              />
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                htmlFor="grid-message"
-              >
-                Message
-              </label>
-              <textarea
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-message"
-                placeholder="Your message here..."
-              />
-            </div>
-          </div>
-          <div className="flex items-center justify-between">
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-              onClick={handleSendClick}
+    <div className="min-h-screen flex items-center justify-center">
+      <form className="w-full max-w-lg bg-gray-800 p-8 rounded-lg">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              htmlFor="grid-email"
             >
-              Send
-            </button>
+              Email
+            </label>
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-email"
+              type="email"
+              placeholder="john.doe@example.com"
+            />
           </div>
-        </form>
-      </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              htmlFor="grid-message"
+            >
+              Message
+            </label>
+            <textarea
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-message"
+              placeholder="Your message here..."
+            />
+          </div>
+        </div>
+        <div className="flex items-center justify-between">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            onClick={handleSendClick}
+          >
+            Send
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

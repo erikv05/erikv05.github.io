@@ -7,13 +7,15 @@ import Projects from "./Projects";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="min-h-screen bg-gray-900 flex flex-col font-mono justify-center">
         <Header />
-        <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
+        <div className="pt-24">
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

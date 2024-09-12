@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="absolute top-0 right-0 p-8 text-white flex justify-between items-center w-full font-mono">
+    <header className="fixed bg-gray-800 top-0 right-0 p-4 text-white flex justify-between items-center w-full font-mono">
       {/* Social Icons */}
       <div className="flex space-x-4 text-blue-500">
         <a href="https://linkedin.com/in/erik-vank">
