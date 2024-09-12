@@ -5,16 +5,13 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col">
       {/* Navigation bar */}
-      <header className="absolute top-0 right-0 p-8 text-white">
+      <header className="absolute top-0 right-0 p-8 text-white justify-center items-center">
         <nav className="flex space-x-8">
           <a href="#about" className="hover:text-blue-500">
             About
           </a>
           <a href="#experience" className="hover:text-blue-500">
             Experience
-          </a>
-          <a href="#work" className="hover:text-blue-500">
-            Work
           </a>
           <a href="#contact" className="hover:text-blue-500">
             Contact
