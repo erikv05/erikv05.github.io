@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col font-mono">
       {/* Navigation bar */}
@@ -112,4 +112,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default Projects;
