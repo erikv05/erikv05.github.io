@@ -125,8 +125,8 @@ const About: React.FC = () => {
             I'm passionate about software engineering.
           </p>
           <p className="text-lg lg:text-xl mt-4 text-gray-400 max-w-lg">
-            I love building web applications, researching the applications of
-            natural language processing, and everything in between.
+            I love building web applications, researching the uses of natural
+            language processing, and everything in between.
           </p>
         </div>
 
