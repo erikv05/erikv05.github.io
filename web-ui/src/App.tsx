@@ -66,16 +66,13 @@ const App: React.FC = () => {
         <a href="#" className="hover:text-white">
           LinkedIn
         </a>
-        <a href="#" className="hover:text-white">
+        <a
+          href="#"
+          className="hover:text-white"
+          style={{ paddingBottom: "1rem" }}
+        >
           GitHub
         </a>
-        <a href="#" className="hover:text-white">
-          Instagram
-        </a>
-        <a href="#" className="hover:text-white">
-          Twitter
-        </a>
-        <div className="w-px h-24 bg-blue-500"></div>
       </div>
 
       {/* Footer Email */}
@@ -83,7 +80,6 @@ const App: React.FC = () => {
         <a href="mailto:erik_vank@brown.edu" className="hover:text-white">
           erik_vank@brown.edu
         </a>
-        <div className="w-px h-24 bg-blue-500 mt-4"></div>
       </div>
     </div>
   );
