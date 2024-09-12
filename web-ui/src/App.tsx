@@ -85,8 +85,8 @@ const App: React.FC = () => {
           <a href="#about" className="hover:animate-bounce-one">
             <span className="text-blue-500">[0]</span> About
           </a>
-          <a href="#experience" className="hover:animate-bounce-one">
-            <span className="text-blue-500">[1]</span> Experience
+          <a href="#projects" className="hover:animate-bounce-one">
+            <span className="text-blue-500">[1]</span> Projects
           </a>
           <a href="#contact" className="hover:animate-bounce-one">
             <span className="text-blue-500">[2]</span> Contact
