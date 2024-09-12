@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import About from "./About";
+import App from "./App";
 import "./index.css";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
@@ -11,6 +11,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <About />
+    <App />
   </React.StrictMode>
 );
