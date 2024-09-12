@@ -17,7 +17,7 @@ const About: React.FC = () => {
           wrapper={"div"}
         />
         <p className="text-4xl lg:text-6xl mt-4 text-gray-400">
-          I'm passionate about software engineering.
+          Driven to make an impact in tech.
         </p>
         <p className="text-lg lg:text-xl mt-4 text-gray-400 max-w-lg">
           I love building web applications, researching the uses of natural
