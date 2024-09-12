@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   const handleSendClick = () => {
     alert("Message sent!");
   };
@@ -21,6 +24,8 @@ const Contact: React.FC = () => {
               id="grid-email"
               type="email"
               placeholder="john.doe@example.com"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </div>
         </div>
@@ -36,6 +41,8 @@ const Contact: React.FC = () => {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-message"
               placeholder="Your message here..."
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
             />
           </div>
         </div>
