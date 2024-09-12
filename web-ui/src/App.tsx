@@ -5,7 +5,82 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col font-mono">
       {/* Navigation bar */}
-      <header className="absolute top-0 right-0 p-8 text-white justify-center items-center">
+      <header className="absolute top-0 right-0 p-8 text-white flex justify-between items-center w-full">
+        {/* Social Icons */}
+        <div className="flex space-x-4 text-blue-500">
+          <a href="https://linkedin.com/in/erik-vank">
+            <div>
+              <img
+                alt="LinkedIn Logo"
+                src={require("./images/linkedinLogo.png")}
+                onMouseOver={() => {
+                  const img = document.getElementById("linkedinLogo");
+                  if (img) {
+                    img.setAttribute(
+                      "src",
+                      require("./images/linkedinLogo-hover.png")
+                    );
+                  }
+                }}
+                onMouseOut={() => {
+                  const img = document.getElementById("linkedinLogo");
+                  if (img) {
+                    img.setAttribute(
+                      "src",
+                      require("./images/linkedinLogo.png")
+                    );
+                  }
+                }}
+                className="object-scale-down h-8 w-8"
+                id="linkedinLogo"
+              />
+            </div>
+          </a>
+          <a href="https://github.com/erikv05">
+            <img
+              alt="GitHub Logo"
+              src={require("./images/githubLogo.png")}
+              onMouseOver={() => {
+                const img = document.getElementById("githubLogo");
+                if (img) {
+                  img.setAttribute(
+                    "src",
+                    require("./images/githubLogo-hover.png")
+                  );
+                }
+              }}
+              onMouseOut={() => {
+                const img = document.getElementById("githubLogo");
+                if (img) {
+                  img.setAttribute("src", require("./images/githubLogo.png"));
+                }
+              }}
+              className="object-scale-down h-8 w-8"
+              id="githubLogo"
+            />
+          </a>
+          <a href="mailto:erik_vank@brown.edu">
+            <img
+              alt="Mail Logo"
+              src={require("./images/mail.png")}
+              onMouseOver={() => {
+                const img = document.getElementById("mail");
+                if (img) {
+                  img.setAttribute("src", require("./images/mail-hover.png"));
+                }
+              }}
+              onMouseOut={() => {
+                const img = document.getElementById("mail");
+                if (img) {
+                  img.setAttribute("src", require("./images/mail.png"));
+                }
+              }}
+              className="object-scale-down h-8 w-8"
+              id="mail"
+            />
+          </a>
+        </div>
+
         <nav className="flex space-x-8 justify-center items-center">
           <a href="#about" className="hover:animate-bounce-one">
             <span className="text-blue-500">[0]</span> About
@@ -58,66 +133,6 @@ const App: React.FC = () => {
           </a>
         </div>
       </main>
-
-      {/* Social Icons Sidebar */}
-      <div className="fixed bottom-4 left-4 flex flex-col space-y-4 text-blue-500">
-        <a href="https://linkedin.com/in/erik-vank">
-          <div>
-            <img
-              src={require("./images/linkedinLogo.png")}
-              onMouseOver={() => {
-                const img = document.getElementById("linkedinLogo");
-                if (img) {
-                  img.setAttribute(
-                    "src",
-                    require("./images/linkedinLogo-hover.png")
-                  );
-                }
-              }}
-              onMouseOut={() => {
-                const img = document.getElementById("linkedinLogo");
-                if (img) {
-                  img.setAttribute("src", require("./images/linkedinLogo.png"));
-                }
-              }}
-              className="object-scale-down h-8 w-8"
-              id="linkedinLogo"
-            />
-          </div>
-        </a>
-        <a href="https://github.com/erikv05">
-          <img
-            src={require("./images/githubLogo.png")}
-            onMouseOver={() => {
-              const img = document.getElementById("githubLogo");
-              if (img) {
-                img.setAttribute(
-                  "src",
-                  require("./images/githubLogo-hover.png")
-                );
-              }
-            }}
-            onMouseOut={() => {
-              const img = document.getElementById("githubLogo");
-              if (img) {
-                img.setAttribute("src", require("./images/githubLogo.png"));
-              }
-            }}
-            className="object-scale-down h-8 w-8"
-            id="githubLogo"
-          />
-        </a>
-      </div>
-
-      {/* Footer Email */}
-      <div className="fixed bottom-2 right-4 text-blue-500">
-        <a
-          href="mailto:erik_vank@brown.edu"
-          className="hover:text-white transition duration-300"
-        >
-          erik_vank@brown.edu
-        </a>
-      </div>
     </div>
   );
 };
