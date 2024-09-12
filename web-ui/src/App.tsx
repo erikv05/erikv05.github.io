@@ -7,22 +7,13 @@ const App: React.FC = () => {
       {/* Navigation bar */}
       <header className="absolute top-0 right-0 p-8 text-white justify-center items-center">
         <nav className="flex space-x-8 justify-center items-center">
-          <a
-            href="#about"
-            className="hover:text-blue-500 transition duration-300"
-          >
+          <a href="#about" className="hover:animate-bounce-one">
             <span className="text-blue-500">[0]</span> About
           </a>
-          <a
-            href="#experience"
-            className="hover:text-blue-500 transition duration-300"
-          >
+          <a href="#experience" className="hover:animate-bounce-one">
             <span className="text-blue-500">[1]</span> Experience
           </a>
-          <a
-            href="#contact"
-            className="hover:text-blue-500 transition duration-300"
-          >
+          <a href="#contact" className="hover:animate-bounce-one">
             <span className="text-blue-500">[2]</span> Contact
           </a>
           <a
