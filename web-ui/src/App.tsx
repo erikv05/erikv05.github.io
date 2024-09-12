@@ -71,7 +71,28 @@ const App: React.FC = () => {
       {/* Social Icons Sidebar */}
       <div className="fixed bottom-2 left-4 flex flex-col space-y-4 text-blue-500">
         <a href="#" className="hover:text-white transition duration-300">
-          LinkedIn
+          <div>
+            <img
+              src={require("./images/linkedinLogo.png")}
+              onMouseOver={() => {
+                const img = document.getElementById("linkedinLogo");
+                if (img) {
+                  img.setAttribute(
+                    "src",
+                    require("./images/linkedinLogo-hover.png")
+                  );
+                }
+              }}
+              onMouseOut={() => {
+                const img = document.getElementById("linkedinLogo");
+                if (img) {
+                  img.setAttribute("src", require("./images/linkedinLogo.png"));
+                }
+              }}
+              className="object-scale-down h-8 w-8"
+              id="linkedinLogo"
+            />
+          </div>
         </a>
         <a href="#" className="hover:text-white transition duration-300">
           GitHub
