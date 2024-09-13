@@ -1,20 +1,4 @@
-import { useState, useEffect } from "react";
-
 function Header() {
-  const maxWidth: number = 1450;
-  const [isDesktop, setDesktop] = useState(window.innerWidth > maxWidth);
-
-  // For small screens, change header to hamburger menu
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > maxWidth);
-  };
-
-  // Handle window resize
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
-
   return (
     <header className="fixed bg-gray-800 top-0 right-0 p-4 text-white flex justify-between items-center w-full font-mono">
       {/* Social Icons */}
