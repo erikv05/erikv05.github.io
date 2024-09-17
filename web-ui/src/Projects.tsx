@@ -156,7 +156,7 @@ const Projects: React.FC = () => {
             >
               GitHub
             </a>
-            : An android game to help students learn the periodic table.
+            : An Android game to help students learn the periodic table.
           </p>
         </div>
         {/* TA exam */}
