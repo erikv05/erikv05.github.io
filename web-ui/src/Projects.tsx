@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
               GitHub
             </a>
             : Supporting document-external annotations using a language model
-            (with the{" "}
+            (with the
             <a
               href="https://uwplse.org/"
               className="text-blue-500 hover:text-white underline transition-colors duration-150"
