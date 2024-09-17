@@ -54,7 +54,8 @@ const Projects: React.FC = () => {
             >
               GitHub
             </a>
-            : Supporting document-external annotations using a language model.
+            : Supporting document-external annotations using a language model
+            (with the PLSE Lab @ University of Washington).
           </p>
         </div>
         {/* Honors final presentation */}
