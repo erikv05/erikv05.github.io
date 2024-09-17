@@ -37,6 +37,16 @@ const Contact: React.FC = () => {
               className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="grid-email"
             >
+              To: erik_vank@brown.edu
+            </label>
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              htmlFor="grid-email"
+            >
               Email
             </label>
             <input

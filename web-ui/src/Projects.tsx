@@ -15,6 +15,21 @@ const Projects: React.FC = () => {
       {/* 2024 projects */}
       <div className="text-xl pb-8">2024</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* HackMTI */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <h2 className="text-xl font-semibold mb-2">SpideySense</h2>
+          <p className="text-gray-400">
+            <a
+              className="text-blue-500 hover:text-white underline transition-colors duration-150"
+              href="https://github.com/gayathriaravindan/spidey-sense-proj"
+            >
+              GitHub
+            </a>
+            : HackMIT project using XGBoost and a Bangle.js watch to build
+            wearable fear detection backed by an AI agent that calls the police
+            on your behalf.
+          </p>
+        </div>
         {/* Personal website */}
         <div className="bg-gray-800 p-4 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">This Website</h2>
