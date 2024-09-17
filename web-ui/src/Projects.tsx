@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
               GitHub
             </a>
             : React + Tailwind CSS with custom animations, deployed to GitHub
-            pages.
+            Pages.
           </p>
         </div>
         {/* Codetations */}
@@ -55,7 +55,14 @@ const Projects: React.FC = () => {
               GitHub
             </a>
             : Supporting document-external annotations using a language model
-            (with the PLSE Lab @ University of Washington).
+            (with the{" "}
+            <a
+              href="https://uwplse.org/"
+              className="text-blue-500 hover:text-white underline transition-colors duration-150"
+            >
+              PLSE
+            </a>
+            Lab @ University of Washington).
           </p>
         </div>
         {/* Honors final presentation */}
@@ -156,7 +163,7 @@ const Projects: React.FC = () => {
             >
               GitHub
             </a>
-            : An Android game to help students learn the periodic table.
+            : An Android game to help students learn the Periodic Table.
           </p>
         </div>
         {/* TA exam */}
