@@ -5,6 +5,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import SmallHeader from "./SmallHeader";
+import Todo from "./Todo";
 
 function App() {
   const maxWidth: number = 750;
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/todo" element={<Todo />} />
           </Routes>
         </div>
       </div>
