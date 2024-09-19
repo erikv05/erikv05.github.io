@@ -8,7 +8,7 @@ import SmallHeader from "./SmallHeader";
 import TodoWithAuth from "./TodoWithAuth";
 
 function App() {
-  const maxWidth: number = 750;
+  const maxWidth: number = 860;
   const [isDesktop, setDesktop] = useState(window.innerWidth > maxWidth);
 
   // For small screens, change header to hamburger menu

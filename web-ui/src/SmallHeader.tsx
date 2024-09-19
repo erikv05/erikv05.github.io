@@ -146,11 +146,18 @@ function SmallHeader() {
             <span className="text-blue-500">[1]</span> Projects
           </a>
           <a
+            href="/#/todo"
+            onClick={() => setIsOpen(false)}
+            className="hover:animate-bounce-one"
+          >
+            <span className="text-blue-500">[2]</span> Todo List
+          </a>
+          <a
             href="/#/contact"
             onClick={() => setIsOpen(false)}
             className="hover:animate-bounce-one"
           >
-            <span className="text-blue-500">[2]</span> Contact
+            <span className="text-blue-500">[3]</span> Contact
           </a>
           <a
             href={require("./res/ErikVank_Resume.pdf")}

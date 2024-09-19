@@ -94,10 +94,10 @@ function Header() {
           <span className="text-blue-500">[1]</span> Projects
         </a>
         <a href="/#/todo" className="hover:animate-bounce-one">
-          <span className="text-blue-500">[3]</span> Todo
+          <span className="text-blue-500">[2]</span> Todo List
         </a>
         <a href="/#/contact" className="hover:animate-bounce-one">
-          <span className="text-blue-500">[4]</span> Contact
+          <span className="text-blue-500">[3]</span> Contact
         </a>
         <a
           href={require("./res/ErikVank_Resume.pdf")}
