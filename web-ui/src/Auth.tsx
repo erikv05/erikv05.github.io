@@ -12,6 +12,7 @@ const Auth: React.FC<{ onAuth: (user: User | null) => void }> = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [error, setError] = useState<string>("");
 
   const handleSignIn = async () => {
     try {
@@ -22,7 +23,18 @@ const Auth: React.FC<{ onAuth: (user: User | null) => void }> = ({
       const { token } = response.data;
       onAuth({ email, token });
     } catch (error) {
-      console.error("Error signing in:", error);
+      if (axios.isAxiosError(error) && error.response?.data.error) {
+        if (
+          error.response.data.error ===
+          "Code auth/invalid-credential, message: Firebase: Error (auth/invalid-credential)."
+        ) {
+          setError("Invalid credentials.");
+        } else {
+          setError(error.response.data.error);
+        }
+      } else {
+        setError("An unexpected error occurred.");
+      }
     }
   };
 
@@ -33,10 +45,13 @@ const Auth: React.FC<{ onAuth: (user: User | null) => void }> = ({
         password,
       });
       const { token } = response.data;
-      console.log("Token:", token);
       onAuth({ email, token });
     } catch (error) {
-      console.error("Error signing up:", error);
+      if (axios.isAxiosError(error) && error.response?.data.error) {
+        setError(error.response.data.error);
+      } else {
+        setError("An unexpected error occurred.");
+      }
     }
   };
 
@@ -69,6 +84,12 @@ const Auth: React.FC<{ onAuth: (user: User | null) => void }> = ({
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error && (
+            <div className="p-2 mb-4 rounded bg-gray-800 text-red-500 focus:outline-none">
+              {error}
+            </div>
+          )}
+
           <button
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"

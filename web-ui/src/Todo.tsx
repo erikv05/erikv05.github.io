@@ -12,7 +12,7 @@ interface User {
   token: string;
 }
 
-const Todo: React.FC<{ user: User | null }> = ({ user }) => {
+const TodoList: React.FC<{ user: User | null }> = ({ user }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState<string>("");
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
@@ -73,13 +73,15 @@ const Todo: React.FC<{ user: User | null }> = ({ user }) => {
             task.id === id ? { ...task, name, completed } : task
           )
         );
+        setEditingIndex(null); // Reset editingIndex after saving
+        setEditingName(""); // Reset editingName after saving
       } catch (error) {
         console.error("Error updating task:", error);
       }
     }
   };
 
-  const deleteTask = async (id: string) => {
+  const deleteTask = async (id: string, index: number) => {
     if (user) {
       try {
         await axios.delete(`http://localhost:8001/api/tasks/${id}`, {
@@ -87,9 +89,41 @@ const Todo: React.FC<{ user: User | null }> = ({ user }) => {
             Authorization: `Bearer ${user.token}`,
           },
         });
+        console.log(editingIndex, index);
+        if (editingIndex === index) {
+          setEditingIndex(null); // Reset editingIndex if deleting currently editing task
+          setEditingName(""); // Reset editingName if deleting currently editing task
+        } else {
+          setEditingIndex((prevIndex) =>
+            prevIndex !== null && prevIndex > index ? prevIndex - 1 : prevIndex
+          );
+        }
         setTasks(tasks.filter((task) => task.id !== id));
       } catch (error) {
         console.error("Error deleting task:", error);
+      }
+    }
+  };
+
+  const toggleTaskCompletion = async (id: string, completed: boolean) => {
+    if (user) {
+      try {
+        await axios.put(
+          `http://localhost:8001/api/tasks/${id}`,
+          { completed: !completed },
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
+        setTasks(
+          tasks.map((task) =>
+            task.id === id ? { ...task, completed: !completed } : task
+          )
+        );
+      } catch (error) {
+        console.error("Error toggling task completion:", error);
       }
     }
   };
@@ -128,21 +162,37 @@ const Todo: React.FC<{ user: User | null }> = ({ user }) => {
                     onChange={(e) => setEditingName(e.target.value)}
                   />
                 ) : (
-                  <span className="flex-grow">{task.name}</span>
+                  <span
+                    className={`flex-grow cursor-pointer ${
+                      task.completed
+                        ? "line-through text-gray-500 hover:text-gray-300"
+                        : "hover:line-through"
+                    }`}
+                    onClick={() =>
+                      toggleTaskCompletion(task.id, task.completed)
+                    }
+                  >
+                    {task.name}
+                  </span>
                 )}
                 <button
                   className="bg-green-500 text-white px-4 py-2 rounded ml-2 hover:bg-green-700 transition duration-300"
-                  onClick={() =>
-                    editingIndex === index
-                      ? updateTask(task.id, editingName, task.completed)
-                      : setEditingIndex(index)
-                  }
+                  onClick={() => {
+                    if (editingIndex === index) {
+                      updateTask(task.id, editingName, task.completed);
+                    } else {
+                      setEditingIndex(index);
+                      setEditingName(task.name); // Set editingName to current task name
+                    }
+                  }}
                 >
                   {editingIndex === index ? "Save" : "Edit"}
                 </button>
                 <button
                   className="bg-red-500 text-white px-4 py-2 rounded ml-2 hover:bg-red-700 transition duration-300"
-                  onClick={() => deleteTask(task.id)}
+                  onClick={() => {
+                    deleteTask(task.id, index);
+                  }}
                 >
                   Delete
                 </button>
@@ -157,4 +207,4 @@ const Todo: React.FC<{ user: User | null }> = ({ user }) => {
   );
 };
 
-export default Todo;
+export default TodoList;

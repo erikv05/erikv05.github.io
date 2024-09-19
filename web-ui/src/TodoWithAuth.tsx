@@ -7,12 +7,19 @@ const TodoWithAuth: React.FC = () => {
     null
   );
 
+  const handleSignOut = () => {
+    setUser(null);
+  };
+
   return (
     <div>
       {user ? (
-        <TodoList user={user} />
+        <>
+          <button onClick={handleSignOut}>Sign Out</button>
+          <TodoList user={user} />
+        </>
       ) : (
-        <Auth onAuth={(user: React.SetStateAction<{ email: string; token: string; } | null>) => setUser(user)} />
+        <Auth onAuth={(user) => setUser(user)} />
       )}
     </div>
   );

@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 if (
   !process.env.API_KEY ||

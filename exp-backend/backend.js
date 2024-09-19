@@ -1,8 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const admin = require("firebase-admin");
-const cors = require("cors");
-var serviceAccount = require("./service-account-key.json");
+import express from "express";
+import bodyParser from "body-parser";
+import admin from "firebase-admin";
+import cors from "cors";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebaseConfig.js";
+const serviceAccount = "./service-account-key.json";
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,31 +20,24 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-
 app.post("/api/signin", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Authenticate the user with Firebase
-    const user = await admin.auth().getUserByEmail(email);
-    const token = await admin.auth().createCustomToken(user.uid);
-    res.json({ token });
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        res.status(200).json({ token: userCredential.user.accessToken });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        res
+          .status(400)
+          .json({ error: `Code ${errorCode}, message: ${errorMessage}` });
+      });
   } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
-
-// Signin endpoint
-app.post("/api/signin", async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    // Authenticate the user with Firebase
-    const user = await admin.auth().getUserByEmail(email);
-    const token = await admin.auth().createCustomToken(user.uid);
-    res.json({ token });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -85,9 +80,14 @@ app.post("/api/tasks", async (req, res) => {
 app.put("/api/tasks/:id", async (req, res) => {
   const { id } = req.params;
   const { name, completed } = req.body;
+
+  const updateData = {};
+  if (name !== undefined) updateData.name = name;
+  if (completed !== undefined) updateData.completed = completed;
+
   try {
-    await db.collection("tasks").doc(id).update({ name, completed });
-    res.json({ id, name, completed });
+    await db.collection("tasks").doc(id).update(updateData);
+    res.json({ id, ...updateData });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
