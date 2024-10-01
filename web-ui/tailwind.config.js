@@ -14,10 +14,10 @@ module.exports = {
           "100%": { transform: "rotate(360deg)" },
         },
       },
-    },
-    animation: {
-      "bounce-one": "newbounce 0.5s",
-      spin: "spin 1s linear infinite",
+      animation: {
+        "bounce-one": "newbounce 0.5s",
+        spin: "spin 1s linear infinite",
+      },
     },
   },
   plugins: [],
