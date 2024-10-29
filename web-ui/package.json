@@ -1,7 +1,7 @@
 {
   "name": "web-ui",
   "version": "0.1.0",
-  "homepage": "https://erikv05.github.io",
+  "homepage": "https://erikv05.github.io/Theo-Project",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
