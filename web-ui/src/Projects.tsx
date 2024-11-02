@@ -60,7 +60,8 @@ const Projects: React.FC = () => {
               href="https://uwplse.org/"
               className="text-blue-500 hover:text-white underline transition-colors duration-150"
             >
-              PLSE
+              {" "}
+              PLSE{" "}
             </a>
             Lab @ University of Washington).
           </p>
