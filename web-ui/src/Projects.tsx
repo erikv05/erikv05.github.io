@@ -12,8 +12,45 @@ const Projects: React.FC = () => {
         wrapper={"div"}
         cursor={false}
       />
+      {/* 2025 projects */}
+      <div className="text-xl pb-8">2025</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Blackout */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <p className="text-gray-400">
+          <h2 className="text-xl font-semibold mb-2">Blackout</h2>
+            <a
+              className="text-blue-500 hover:text-white underline transition-colors duration-150"
+              href="https://www.useblackout.app/"
+            >
+              Website
+            </a>
+          : The last screen time app you'll ever need.
+          </p>
+        </div>
+        {/* LfS Final */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <p className="text-gray-400">
+          <h2 className="text-xl font-semibold mb-2">React PBT</h2>
+            <a
+              className="text-blue-500 hover:text-white underline transition-colors duration-150"
+              href="https://github.com/erikv05/cs1710-final"
+            >
+              GitHub
+            </a>
+          : Using Z3 to enable stateful property-based testing of React components.
+          </p>
+        </div>
+        {/* TartanHacks */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <h2 className="text-xl font-semibold mb-2">AdDojo</h2>
+          <p className="text-gray-400">
+          No public code: TartanHacks project using a language model and web scraper to generate winning advertisements. Won $2,000 second place prize.
+          </p>
+        </div>
+      </div>
       {/* 2024 projects */}
-      <div className="text-xl pb-8">2024</div>
+      <div className="text-xl py-8">2024</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* HackMTI */}
         <div className="bg-gray-800 p-4 rounded-lg">
