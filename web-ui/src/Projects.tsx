@@ -17,8 +17,8 @@ const Projects: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Blackout */}
         <div className="bg-gray-800 p-4 rounded-lg">
-          <p className="text-gray-400">
           <h2 className="text-xl font-semibold mb-2">Blackout</h2>
+          <p className="text-gray-400">
             <a
               className="text-blue-500 hover:text-white underline transition-colors duration-150"
               href="https://www.useblackout.app/"
@@ -30,8 +30,8 @@ const Projects: React.FC = () => {
         </div>
         {/* LfS Final */}
         <div className="bg-gray-800 p-4 rounded-lg">
-          <p className="text-gray-400">
           <h2 className="text-xl font-semibold mb-2">React PBT</h2>
+          <p className="text-gray-400">
             <a
               className="text-blue-500 hover:text-white underline transition-colors duration-150"
               href="https://github.com/erikv05/cs1710-final"
