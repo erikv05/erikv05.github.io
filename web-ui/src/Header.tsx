@@ -64,7 +64,7 @@ function Header() {
             id="githubLogo"
           />
         </a>
-        <a href="mailto:erik_vank@brown.edu">
+        <a href="mailto:erikvank05@gmail.com">
           <img
             alt="Mail Logo"
             src={require("./res/images/mail.png")}

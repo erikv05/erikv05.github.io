@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
           setSendEmailSuccess(true);
         },
         (err) => {
-          alert("Could not send email. Please email me at erik_vank@brown.edu");
+          alert("Could not send email. Please email me at erikvank05@gmail.com");
           setError(true);
         }
       );
@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
               className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="grid-email"
             >
-              To: erik_vank@brown.edu
+              To: erikvank05@gmail.com
             </label>
           </div>
         </div>
